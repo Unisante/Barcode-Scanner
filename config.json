@@ -1,0 +1,112 @@
+{
+  "name": "Scanner",
+  "namespace": "Unisante\\Scan",
+  "description": "This external module attaches a button next to selected text fields",
+  "versions": [
+    {
+      "0.0.1": "This External Module allows barcodes to be scanned and have the decoded text returned into a text field."
+    }
+  ],
+  "authors": [
+    {
+      "name": "Sylvain Schaufelberger",
+      "email": "sylvain.schaufelberger@unisante.ch",
+      "institution": "Unisante"
+    }
+  ],
+  "permissions": [
+    "redcap_data_entry_form"
+  ],
+  "project-settings": [
+    {
+      "key": "scan-field",
+      "name": "Choose which field has to be scan and it's scanner",
+      "required": true,
+      "type": "sub_settings",
+      "repeatable": true,
+      "sub_settings": [
+        {
+          "key": "scannable-field-list",
+          "name": "Name of the field",
+          "required": true,
+          "type": "field-list"
+        },
+        {
+          "key": "barcode",
+          "name": "Choose the scanner to use",
+          "required": true,
+          "type": "dropdown",
+          "repeatable": false,
+          "choices": [
+            {
+              "key": "code_128",
+              "name": "Code 128",
+              "required": false,
+              "value": "code_128"
+            },
+            {
+              "key": "ean_reader",
+              "name": "EAN",
+              "required": false,
+              "value": "ean_reader"
+            },
+            {
+              "key": "ean_8_reader",
+              "name": "EAN 8",
+              "required": false,
+              "value": "ean_8_reader"
+            },
+            {
+              "key": "code_39_reader",
+              "name": "Code 39",
+              "required": false,
+              "value": "code_39_reader"
+            },
+            {
+              "key": "code_39_vin_reader",
+              "name": "Code 39 vin",
+              "required": false,
+              "value": "code_39_vin_reader"
+            },
+            {
+              "key": "codabar_reader",
+              "name": "Codabar",
+              "required": false,
+              "value": "codabar_reader"
+            },
+            {
+              "key": "upc_reader",
+              "name": "UPC",
+              "required": false,
+              "value": "upc_reader"
+            },
+            {
+              "key": "upc_e_reader",
+              "name": "UPC-E",
+              "required": false,
+              "value": "upc_e_reader"
+            },
+            {
+              "key": "i2of5_reader",
+              "name": "I2of5",
+              "required": false,
+              "value": "i2of5_reader"
+            },
+            {
+              "key": "2of5_reader",
+              "name": "2of5",
+              "required": false,
+              "value": "2of5_reader"
+            },
+            {
+              "key": "code_93_reader",
+              "name": "Code 93",
+              "required": false,
+              "value": "code_93_reader"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
