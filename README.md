@@ -3,7 +3,7 @@ This External Module allows barcodes to be scanned and have the decoded text ret
 
 It's using [QuaggaJS](https://github.com/serratus/quaggaJS)
 
-QuaggaJS is a barcode-scanner entirely written in JavaScript supporting real- time localization and decoding of various types of barcodes such as EAN, CODE 128, CODE 39, EAN 8, UPC-A, UPC-C, I2of5, 2of5, CODE 93 and CODABAR.
+QuaggaJS is a barcode-scanner entirely written in JavaScript supporting real- time localization and decoding of various types of barcodes such as EAN, CODE 128, CODE 39, EAN 8, UPC-A, UPC-C, I2of5, 2of5, CODE 93, CODE 32 and CODABAR.
 The library is also capable of using getUserMedia to get direct access to the user’s camera stream.
 Although the code relies on heavy image-processing even recent smartphones are capable of locating and decoding barcodes in real-time.
 
