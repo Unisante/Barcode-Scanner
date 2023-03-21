@@ -19,6 +19,12 @@ When the barcode has been detected, the container will hide and the field will b
 
 ## Configuration
 In the configuration options, you can add as many fields as you want in as many different instruments. Each field can be configured with its own decoding technology.
+For each field, you have to configure 
+  - the name of the field (from a list)
+  - which scanner technology you want
+  - (v.1.1.0) Enable the field on the survey pages
+
+![configuration](./img/config.png)
 
 Here is all the possible readers:
 
@@ -35,7 +41,8 @@ Here is all the possible readers:
 - code_93_reader
 - code_32_reader
 
-![configuration](./img/config.png)
+
+![options](./img/options.png)
 
 ## Browser Support
 
