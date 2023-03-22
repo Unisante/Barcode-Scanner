@@ -45,10 +45,10 @@
                     "repeatable": false,
                     "choices": [
                         {
-                            "key": "code_128",
+                            "key": "code_128_reader",
                             "name": "Code 128",
                             "required": false,
-                            "value": "code_128"
+                            "value": "code_128_reader"
                         },
                         {
                             "key": "ean_reader",
