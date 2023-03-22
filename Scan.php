@@ -25,23 +25,19 @@ class Scan extends \ExternalModules\AbstractExternalModule
         $is_survey = $this->getProjectSetting('is-survey');
         $instrument_fields = REDCap::getFieldNames($instrument);
 
-        // No corresponding field on the current page (data entry/survey)
-        // No need to inject
-        if (count(array_intersect($em_fields, $instrument_fields)) === 0) {
-            return $this->exitAfterHook();
-        }
-
         if ($this->isSurveyPage()) {
             foreach ($em_fields as $key => $value) {
                 // We remove the non enabled survey fields
-                if ($is_survey[$key] === false) {
+                if ($is_survey[$key] !== true) {
                     unset($em_fields[$key]);
                 }
             }
-            // No corresponding field on the current survey page
-            if (count(array_intersect($em_fields, $instrument_fields)) === 0) {
-                return $this->exitAfterHook();
-            }
+        }
+
+        // No corresponding field on the current survey page
+        // No need to inject
+        if (count(array_intersect($em_fields, $instrument_fields)) === 0) {
+            return;
         }
 
         echo '<script src="' . $this->getUrl("quagga.js") . '"></script>';
@@ -52,7 +48,5 @@ class Scan extends \ExternalModules\AbstractExternalModule
             echo "$('input[name=" . $value . "]').after('<input type=\"button\" onclick=" . "redQuagga.start(\"" . $value . "\",\"" . $barcode[$key] . "\")" . " id=" . $value . "-button" . " value=\"Scan\" /><input style=\"display:none;\" type=\"button\" onclick=" . "redQuagga.stop()" . " id=" . $value . "-button-stop" . " value=\"Stop\" /><div id=" . $value . "-container" . "></div>');";
         }
         print '</script>';
-
-        return $this->exitAfterHook();
     }
 }
