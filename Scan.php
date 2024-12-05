@@ -20,7 +20,7 @@ class Scan extends \ExternalModules\AbstractExternalModule
     function injectQuagga($instrument)
     {
 
-        $em_fields = $this->getProjectSetting('scannable-field-list');
+        $em_fields = $this->getProjectSetting('scannable-field-list') ?? [];
         $barcode = $this->getProjectSetting('barcode');
         $is_survey = $this->getProjectSetting('is-survey');
         $instrument_fields = REDCap::getFieldNames($instrument);
